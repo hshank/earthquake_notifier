@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.harishshanker.yourfault" >
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher" >
+        <uses-permission android:name="android.permission.INTERNET" />
+        android:label="@string/app_name"
+        android:debuggable="true">
+        <service android:name=".FaultFinder" />
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="                        YOUR FAULT" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".MapActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+        >
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD_xHDjKzLhwl8LrFkY97gN1hH46q5aHo8" />
+
+        <service
+            android:name=".ListenerService"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+            <action android:name="com.google.android.gms.wearable.BIND_LISTENER" />
+        </intent-filter>
+        </service>
+
+        <activity
+            android:name=".PictureActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+             >
+        </activity>
+    </application>
+
+</manifest>
